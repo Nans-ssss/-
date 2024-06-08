@@ -1,0 +1,63 @@
+    <html>
+
+    <head>
+        <meta charset="utf-8" />
+	  <link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
+		<link rel="stylesheet" type="text/css" href="/css/media.css" /> 
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
+        <title>Tout Sauf Toi</title>
+    </head>
+
+    <body>
+<div class="header">
+<div class="header-texte">
+<center><a href="/index.html">Accueil</center>
+</div>
+</div>
+        <div class='video'>
+            <script type="text/javascript" src="https://cdn.jwplayer.com/libraries/3yfBcL8f.js"></script>
+            <div id="myElement"></div>
+            <script type="text/javascript">
+                jwplayer("myElement").setup({
+                    autostart: false,
+                    file: "https://moa3747.moacloud.com/files/aa/8SXEfmBzm88b0HJoVDNwyToTodItm5BuYz8.m3u8"
+
+
+                })
+
+
+                let play = 0;
+
+                jwplayer("myElement").on('play', function(e) {
+
+                    play++;
+
+                    if (play == 1) {
+
+                        $.ajax({
+
+                            type: "post",
+                            url: "/play",
+                            data: {
+                                "play": "6RkvPP48m8"
+                            }
+
+                        });
+
+
+                    }
+
+                });
+            </script>
+	<br>
+	<br>
+	<div class="footer">
+	<div class="footer-texte">
+	<center>Je n'héberge aucune vidéo sur mon serveur. Contactez directement la plateforme d'hébergement vidéo pour toutes réclamations de droits relatifs aux contenus en question.</center>
+	</div>
+	</div>
+    </body>
+    </html>
+
